@@ -16,7 +16,7 @@
     body {
       font-family: Arial, sans-serif;
       background: #070707;
-      color: white;
+      color: #ffffff;
       line-height: 1.5;
     }
 
@@ -26,13 +26,19 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 30px;
+      padding: 30px 20px;
       background:
-        radial-gradient(circle at center, #4d1708 0%, #120806 35%, #070707 70%);
+        radial-gradient(
+          circle at center,
+          #4d1708 0%,
+          #120806 38%,
+          #070707 72%
+        );
     }
 
     .hero-content {
-      max-width: 850px;
+      width: 100%;
+      max-width: 900px;
     }
 
     .small-title {
@@ -55,9 +61,9 @@
     }
 
     .hero p {
-      margin: 20px auto 30px;
       max-width: 650px;
-      color: #bbb;
+      margin: 20px auto 30px;
+      color: #bbbbbb;
       font-size: 17px;
     }
 
@@ -65,16 +71,18 @@
       display: inline-block;
       padding: 15px 28px;
       background: #ff541c;
-      color: white;
+      color: #ffffff;
       border: none;
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
       cursor: pointer;
+      transition: 0.2s;
     }
 
     .btn:hover {
       transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 84, 28, 0.3);
     }
 
     .section {
@@ -91,7 +99,7 @@
 
     .section-subtitle {
       text-align: center;
-      color: #888;
+      color: #888888;
       margin-bottom: 35px;
     }
 
@@ -109,10 +117,13 @@
       text-align: center;
     }
 
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
     .card p {
-      color: #888;
+      color: #888888;
       font-size: 14px;
-      margin-top: 8px;
     }
 
     .form-container {
@@ -139,9 +150,9 @@
       margin-top: 8px;
       padding: 14px;
       border-radius: 8px;
-      border: 1px solid #333;
+      border: 1px solid #333333;
       background: #070707;
-      color: white;
+      color: #ffffff;
       outline: none;
     }
 
@@ -192,8 +203,8 @@
     footer {
       text-align: center;
       padding: 30px;
-      border-top: 1px solid #222;
-      color: #666;
+      border-top: 1px solid #222222;
+      color: #666666;
     }
 
     @media (max-width: 700px) {
@@ -256,22 +267,27 @@
 
       <div class="card">
         <h3>⚔️ COMPETITIVE</h3>
+
         <p>
           Participate in guild wars,
           matches and competitive events.
         </p>
       </div>
 
+
       <div class="card">
         <h3>🔥 TEAMWORK</h3>
+
         <p>
           Build teamwork and improve
           your game with the squad.
         </p>
       </div>
 
+
       <div class="card">
         <h3>🏆 GROWTH</h3>
+
         <p>
           Improve your skills and
           work toward becoming a core player.
@@ -283,7 +299,7 @@
   </section>
 
 
-  <!-- APPLICATION -->
+  <!-- TRYOUT FORM -->
 
   <section class="section" id="apply">
 
@@ -295,9 +311,11 @@
       Fill in your information carefully.
     </p>
 
+
     <div class="form-container">
 
       <div id="error"></div>
+
 
       <form id="tryoutForm">
 
@@ -312,8 +330,8 @@
               placeholder="Your Free Fire name"
               required
             >
-
           </label>
+
 
           <label>
             Free Fire UID
@@ -324,7 +342,6 @@
               placeholder="Your UID"
               required
             >
-
           </label>
 
         </div>
@@ -339,7 +356,6 @@
             placeholder="Your contact number"
             required
           >
-
         </label>
 
 
@@ -467,7 +483,7 @@
       </form>
 
 
-      <!-- SUCCESS -->
+      <!-- SUCCESS MESSAGE -->
 
       <div id="success">
 
@@ -497,183 +513,222 @@
   </footer>
 
 
-<script>
+  <script>
 
-/*
-====================================================
-SUPABASE CONNECTION
-====================================================
+    /*
+    ============================================
+    SUPABASE DATABASE CONNECTION
+    ============================================
 
-Replace ONLY the two values below.
+    Your Project URL is already inserted.
 
-Do NOT use your database password.
-Do NOT use a service_role/secret key.
+    Paste your CURRENT Supabase
+    publishable key below.
 
-Use:
-1. Supabase Project URL
-2. Supabase Publishable/anon public key
-====================================================
-*/
-
-const SUPABASE_URL =
-  "PASTE_YOUR_SUPABASE_PROJECT_URL_HERE";
-
-const SUPABASE_ANON_KEY =
-  "PASTE_YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY_HERE";
+    NEVER put your database password,
+    service_role key, or secret key here.
+    ============================================
+    */
 
 
-const form = document.getElementById("tryoutForm");
-
-const success = document.getElementById("success");
-
-const errorBox = document.getElementById("error");
-
-const submitButton =
-  document.getElementById("submitButton");
+    const SUPABASE_URL =
+      "https://muyggfhblazjqoewrxth.supabase.co";
 
 
-form.addEventListener("submit", async function(event) {
-
-  event.preventDefault();
-
-  errorBox.style.display = "none";
-
-  submitButton.disabled = true;
-
-  submitButton.textContent = "SUBMITTING...";
+    const SUPABASE_ANON_KEY =
+      "PASTE_YOUR_SB_PUBLISHABLE_KEY_HERE";
 
 
-  try {
-
-    if (
-      SUPABASE_URL.includes("PASTE_") ||
-      SUPABASE_ANON_KEY.includes("PASTE_")
-    ) {
-
-      throw new Error(
-        "Supabase has not been connected yet."
-      );
-
-    }
+    const form =
+      document.getElementById("tryoutForm");
 
 
-    const formData =
-      Object.fromEntries(
-        new FormData(form).entries()
-      );
+    const success =
+      document.getElementById("success");
 
 
-    const applicationId =
-      "TC-" +
-      Date.now()
-        .toString()
-        .slice(-8);
+    const errorBox =
+      document.getElementById("error");
 
 
-    const application = {
-
-      application_id: applicationId,
-
-      ign: formData.ign,
-
-      uid: formData.uid,
-
-      contact: formData.contact,
-
-      player_role: formData.player_role,
-
-      player_rank: formData.player_rank,
-
-      headshot: formData.headshot || null,
-
-      game_mode: formData.game_mode,
-
-      microphone: formData.microphone,
-
-      previous_guild:
-        formData.previous_guild || null,
-
-      reason: formData.reason,
-
-      status: "pending"
-
-    };
+    const submitButton =
+      document.getElementById("submitButton");
 
 
-    const response = await fetch(
+    form.addEventListener(
+      "submit",
+      async function(event) {
 
-      SUPABASE_URL +
-      "/rest/v1/applications",
+        event.preventDefault();
 
-      {
 
-        method: "POST",
+        errorBox.style.display = "none";
 
-        headers: {
 
-          "apikey": SUPABASE_ANON_KEY,
+        submitButton.disabled = true;
 
-          "Authorization":
-            "Bearer " +
-            SUPABASE_ANON_KEY,
 
-          "Content-Type":
-            "application/json",
+        submitButton.textContent =
+          "SUBMITTING...";
 
-          "Prefer":
-            "return=minimal"
 
-        },
+        try {
 
-        body:
-          JSON.stringify(application)
+
+          if (
+            SUPABASE_URL.includes("PASTE_") ||
+            SUPABASE_ANON_KEY.includes("PASTE_")
+          ) {
+
+            throw new Error(
+              "Supabase has not been connected yet."
+            );
+
+          }
+
+
+          const formData =
+            Object.fromEntries(
+              new FormData(form).entries()
+            );
+
+
+          const applicationId =
+            "TC-" +
+            Date.now()
+              .toString()
+              .slice(-8);
+
+
+          const application = {
+
+            application_id:
+              applicationId,
+
+            ign:
+              formData.ign,
+
+            uid:
+              formData.uid,
+
+            contact:
+              formData.contact,
+
+            player_role:
+              formData.player_role,
+
+            player_rank:
+              formData.player_rank,
+
+            headshot:
+              formData.headshot || null,
+
+            game_mode:
+              formData.game_mode,
+
+            microphone:
+              formData.microphone,
+
+            previous_guild:
+              formData.previous_guild || null,
+
+            reason:
+              formData.reason,
+
+            status:
+              "pending"
+
+          };
+
+
+          const response =
+            await fetch(
+
+              SUPABASE_URL +
+              "/rest/v1/applications",
+
+              {
+
+                method: "POST",
+
+                headers: {
+
+                  "apikey":
+                    SUPABASE_ANON_KEY,
+sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma
+                  "Authorization":
+                    "Bearer " +
+                    SUPABASE_ANON_KEY,
+
+                  "Content-Type":
+                    "application/json",
+
+                  "Prefer":
+                    "return=minimal"
+
+                },
+
+                body:
+                  JSON.stringify(application)
+
+              }
+
+            );
+
+
+          if (!response.ok) {
+
+            const details =
+              await response.text();
+
+            throw new Error(
+              "Database error: " +
+              details
+            );
+
+          }
+
+
+          form.style.display =
+            "none";
+
+
+          success.style.display =
+            "block";
+
+
+          document.getElementById(
+            "applicationId"
+          ).textContent =
+            "Application ID: " +
+            applicationId;
+
+
+        } catch (error) {
+
+
+          errorBox.textContent =
+            error.message;
+
+
+          errorBox.style.display =
+            "block";
+
+
+          submitButton.disabled =
+            false;
+
+
+          submitButton.textContent =
+            "⚔ SUBMIT APPLICATION";
+
+        }
 
       }
 
     );
 
-
-    if (!response.ok) {
-
-      const details =
-        await response.text();
-
-      throw new Error(
-        "Database error: " + details
-      );
-
-    }
-
-
-    form.style.display = "none";
-
-    success.style.display = "block";
-
-    document.getElementById(
-      "applicationId"
-    ).textContent =
-      "Application ID: " +
-      applicationId;
-
-
-  } catch (error) {
-
-    errorBox.textContent =
-      error.message;
-
-    errorBox.style.display =
-      "block";
-
-    submitButton.disabled = false;
-
-    submitButton.textContent =
-      "⚔ SUBMIT APPLICATION";
-
-  }
-
-});
-
-</script>
+  </script>
 
 </body>
-</html>
+        </html>
