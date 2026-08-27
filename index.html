@@ -27,7 +27,7 @@
     body {
       font-family: Arial, sans-serif;
       background: #070707;
-      color: white;
+      color: #ffffff;
       line-height: 1.5;
     }
 
@@ -58,6 +58,7 @@
 
 
     .hero-content {
+      width: 100%;
       max-width: 900px;
     }
 
@@ -121,7 +122,7 @@
 
       background: #ff541c;
 
-      color: white;
+      color: #ffffff;
 
       border: none;
 
@@ -133,14 +134,29 @@
 
       cursor: pointer;
 
+      transition: 0.2s;
+
     }
 
 
     .btn:hover {
 
+      transform: translateY(-2px);
+
       box-shadow:
         0 8px 25px
         rgba(255, 84, 28, 0.3);
+
+    }
+
+
+    .btn:disabled {
+
+      opacity: 0.6;
+
+      cursor: not-allowed;
+
+      transform: none;
 
     }
 
@@ -171,7 +187,7 @@
 
       text-align: center;
 
-      color: #888;
+      color: #888888;
 
       margin-bottom: 35px;
 
@@ -214,7 +230,7 @@
 
     .card p {
 
-      color: #888;
+      color: #888888;
 
       font-size: 14px;
 
@@ -264,11 +280,11 @@
 
       border-radius: 8px;
 
-      border: 1px solid #333;
+      border: 1px solid #333333;
 
       background: #070707;
 
-      color: white;
+      color: #ffffff;
 
       outline: none;
 
@@ -305,13 +321,15 @@
     }
 
 
+    /* SUCCESS SCREEN */
+
     #success {
 
       display: none;
 
       text-align: center;
 
-      padding: 35px 15px;
+      padding: 40px 15px;
 
     }
 
@@ -319,6 +337,8 @@
     #success h2 {
 
       color: #ff652c;
+
+      font-size: 30px;
 
       margin-bottom: 15px;
 
@@ -331,10 +351,12 @@
 
       font-weight: bold;
 
-      margin: 15px 0;
+      margin: 20px 0;
 
     }
 
+
+    /* COOLDOWN SCREEN */
 
     #cooldown {
 
@@ -342,7 +364,7 @@
 
       text-align: center;
 
-      padding: 35px 15px;
+      padding: 40px 15px;
 
     }
 
@@ -351,6 +373,8 @@
 
       color: #ff652c;
 
+      font-size: 28px;
+
       margin-bottom: 15px;
 
     }
@@ -358,14 +382,16 @@
 
     #countdown {
 
-      font-size: 22px;
+      font-size: 20px;
 
       font-weight: bold;
 
-      margin: 15px 0;
+      margin: 20px 0;
 
     }
 
+
+    /* ERROR */
 
     #error {
 
@@ -383,6 +409,8 @@
 
       margin-bottom: 15px;
 
+      word-break: break-word;
+
     }
 
 
@@ -392,9 +420,9 @@
 
       padding: 30px;
 
-      border-top: 1px solid #222;
+      border-top: 1px solid #222222;
 
-      color: #666;
+      color: #666666;
 
     }
 
@@ -463,7 +491,9 @@
         href="#apply"
         class="btn"
       >
+
         ⚔ APPLY NOW
+
       </a>
 
     </div>
@@ -475,8 +505,11 @@
 
   <section class="section">
 
+
     <h2 class="section-title">
+
       WHY JOIN US?
+
     </h2>
 
 
@@ -501,7 +534,6 @@
         <p>
 
           Participate in guild wars,
-
           matches and competitive events.
 
         </p>
@@ -518,7 +550,6 @@
         <p>
 
           Build teamwork and improve
-
           your game with the squad.
 
         </p>
@@ -535,7 +566,6 @@
         <p>
 
           Improve your skills and
-
           become a stronger player.
 
         </p>
@@ -555,6 +585,7 @@
     id="apply"
   >
 
+
     <h2 class="section-title">
 
       TRYOUT APPLICATION
@@ -571,6 +602,8 @@
 
     <div class="form-container">
 
+
+      <!-- ERROR -->
 
       <div id="error"></div>
 
@@ -826,7 +859,18 @@
 
         <p>
 
-          Please wait 24 hours before
+          Thank you for applying to
+          THEㅤ⚔ㅤCONQUEROR.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+          ⏳ Please wait 24 hours before
           applying again.
 
         </p>
@@ -847,21 +891,23 @@
 
         <p>
 
-          You have already submitted
-          a tryout application.
+          Your previous application
+          has already been received.
 
         </p>
 
 
         <div id="countdown">
-          Checking cooldown...
+
+          Please wait 24 hours.
+
         </div>
 
 
         <p>
 
-          Please wait until your
-          24-hour cooldown ends.
+          You can apply again after
+          your 24-hour cooldown ends.
 
         </p>
 
@@ -890,12 +936,12 @@
 SUPABASE CONNECTION
 ================================================
 
-Your project URL is already inserted.
+Project URL:
+https://muyggfhblazjqoewrxth.supabase.co
 
-Paste your CURRENT sb_publishable key
-inside the quotes below.
+Paste your CURRENT sb_publishable key below.
 
-DO NOT use a service_role or secret key.
+DO NOT use a secret/service_role key.
 ================================================
 */
 
@@ -906,6 +952,12 @@ const SUPABASE_URL =
 
 const SUPABASE_ANON_KEY =
   sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma
+
+/*
+================================================
+PAGE ELEMENTS
+================================================
+*/
 
 
 const form =
@@ -952,7 +1004,7 @@ const countdown =
 
 /*
 ================================================
-SUBMIT APPLICATION
+FORM SUBMISSION
 ================================================
 */
 
@@ -960,6 +1012,7 @@ SUBMIT APPLICATION
 form.addEventListener(
   "submit",
   async function(event) {
+
 
     event.preventDefault();
 
@@ -979,6 +1032,10 @@ form.addEventListener(
     try {
 
 
+      /*
+      Check key.
+      */
+
       if (
         SUPABASE_ANON_KEY.includes(
           "PASTE_"
@@ -986,17 +1043,63 @@ form.addEventListener(
       ) {
 
         throw new Error(
-          "Supabase publishable key has not been added yet."
+          "Please add your Supabase publishable key."
         );
 
       }
 
 
-      const formData =
-        Object.fromEntries(
-          new FormData(form).entries()
-        );
+      /*
+      Get form data.
+      */
 
+      const formData =
+        new FormData(form);
+
+
+      const ign =
+        formData.get("ign");
+
+
+      const uid =
+        formData.get("uid");
+
+
+      const contact =
+        formData.get("contact");
+
+
+      const playerRole =
+        formData.get("player_role");
+
+
+      const playerRank =
+        formData.get("player_rank");
+
+
+      const headshot =
+        formData.get("headshot");
+
+
+      const gameMode =
+        formData.get("game_mode");
+
+
+      const microphone =
+        formData.get("microphone");
+
+
+      const previousGuild =
+        formData.get("previous_guild");
+
+
+      const reason =
+        formData.get("reason");
+
+
+      /*
+      Generate application ID.
+      */
 
       const applicationId =
         "TC-" +
@@ -1005,47 +1108,54 @@ form.addEventListener(
           .slice(-8);
 
 
+      /*
+      Create application.
+      */
+
       const application = {
 
         application_id:
           applicationId,
 
         ign:
-          formData.ign,
+          ign,
 
         uid:
-          formData.uid,
+          uid,
 
         contact:
-          formData.contact,
+          contact,
 
         player_role:
-          formData.player_role,
+          playerRole,
 
         player_rank:
-          formData.player_rank,
+          playerRank,
 
         headshot:
-          formData.headshot || null,
+          headshot || null,
 
         game_mode:
-          formData.game_mode,
+          gameMode,
 
         microphone:
-          formData.microphone,
+          microphone,
 
         previous_guild:
-          formData.previous_guild ||
-          null,
+          previousGuild || null,
 
         reason:
-          formData.reason,
+          reason,
 
         status:
           "pending"
 
       };
 
+
+      /*
+      SEND TO SUPABASE
+      */
 
       const response =
         await fetch(
@@ -1061,7 +1171,7 @@ form.addEventListener(
 
               "apikey":
                 SUPABASE_ANON_KEY,
-sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma
+
               "Authorization":
                 "Bearer " +
                 SUPABASE_ANON_KEY,
@@ -1084,22 +1194,45 @@ sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma
         );
 
 
-      if (!response.ok) {
+      /*
+      GET RESPONSE TEXT
+      */
 
-        const details =
-          await response.text();
+      const responseText =
+        await response.text();
+
+
+      console.log(
+        "Supabase status:",
+        response.status
+      );
+
+
+      console.log(
+        "Supabase response:",
+        responseText
+      );
+
+
+      /*
+      ========================================
+      DATABASE REJECTED APPLICATION
+      ========================================
+      */
+
+      if (!response.ok) {
 
 
         /*
-        Detect the database's
-        24-hour cooldown error.
+        24-HOUR COOLDOWN
         */
 
         if (
-          details.includes(
+          responseText.includes(
             "24 hours"
           )
         ) {
+
 
           form.style.display =
             "none";
@@ -1110,41 +1243,90 @@ sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma
 
 
           countdown.textContent =
-            "Please wait 24 hours.";
+            "⏳ Please wait 24 hours before applying again.";
+
+
+          cooldown.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
 
           return;
 
         }
 
 
+        /*
+        Other database error.
+        */
+
         throw new Error(
-          "Database error: " +
-          details
+          "Database error (" +
+          response.status +
+          "): " +
+          responseText
         );
 
       }
 
 
       /*
+      ========================================
       SUCCESS
+      ========================================
+      */
+
+      console.log(
+        "APPLICATION SUBMITTED SUCCESSFULLY"
+      );
+
+
+      /*
+      Hide the form.
       */
 
       form.style.display =
         "none";
 
 
+      /*
+      Show success screen.
+      */
+
       success.style.display =
         "block";
 
+
+      /*
+      Show application ID.
+      */
 
       applicationIdBox.textContent =
         "Application ID: " +
         applicationId;
 
 
+      /*
+      Scroll to success message.
+      */
+
+      success.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+
     }
 
+
     catch (error) {
+
+
+      console.error(
+        "Submission error:",
+        error
+      );
 
 
       errorBox.textContent =
@@ -1168,8 +1350,8 @@ sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma
 
 );
 
-
 </script>
+
 
 </body>
 
