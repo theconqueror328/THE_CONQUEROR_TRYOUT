@@ -10,10 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    THE ⚔ CONQUEROR | Guild Tryouts
-  </title>
-
+  <title>THE ⚔ CONQUEROR | Guild Tryouts</title>
 
   <style>
 
@@ -23,250 +20,144 @@
       padding: 0;
     }
 
-
     body {
       font-family: Arial, sans-serif;
       background: #070707;
-      color: #ffffff;
+      color: #fff;
       line-height: 1.5;
     }
 
-
     .hero {
-
       min-height: 75vh;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       text-align: center;
-
       padding: 30px 20px;
 
       background:
         radial-gradient(
           circle at center,
           #4d1708 0%,
-          #120806 38%,
-          #070707 72%
+          #120806 40%,
+          #070707 75%
         );
-
     }
-
 
     .hero-content {
       width: 100%;
       max-width: 900px;
     }
 
-
     .small-title {
-
       color: #ff5b22;
-
       font-weight: bold;
-
       letter-spacing: 4px;
-
       margin-bottom: 20px;
-
     }
 
-
     .hero h1 {
-
-      font-size:
-        clamp(38px, 8vw, 78px);
-
+      font-size: clamp(38px, 8vw, 78px);
       letter-spacing: 3px;
-
       text-transform: uppercase;
 
       text-shadow:
         0 0 30px
         rgba(255, 70, 20, 0.5);
-
     }
-
 
     .hero h2 {
-
       margin-top: 15px;
-
       color: #ff652c;
-
     }
-
 
     .hero p {
-
       max-width: 650px;
-
       margin: 20px auto 30px;
-
-      color: #bbbbbb;
-
+      color: #bbb;
       font-size: 17px;
-
     }
 
-
     .btn {
-
       display: inline-block;
 
       padding: 15px 28px;
 
       background: #ff541c;
-
-      color: #ffffff;
+      color: #fff;
 
       border: none;
-
       border-radius: 8px;
 
       font-weight: bold;
-
       text-decoration: none;
 
       cursor: pointer;
-
-      transition: 0.2s;
-
     }
-
-
-    .btn:hover {
-
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 8px 25px
-        rgba(255, 84, 28, 0.3);
-
-    }
-
 
     .btn:disabled {
-
       opacity: 0.6;
-
       cursor: not-allowed;
-
-      transform: none;
-
     }
-
 
     .section {
-
       width: min(900px, 92%);
-
       margin: auto;
-
       padding: 65px 0;
-
     }
-
 
     .section-title {
-
       text-align: center;
-
       font-size: 34px;
-
       margin-bottom: 10px;
-
     }
-
 
     .section-subtitle {
-
       text-align: center;
-
-      color: #888888;
-
+      color: #888;
       margin-bottom: 35px;
-
     }
-
 
     .cards {
-
       display: grid;
-
       grid-template-columns:
         repeat(3, 1fr);
-
       gap: 18px;
-
     }
-
 
     .card {
-
       background: #101010;
-
       border: 1px solid #292929;
-
       padding: 25px;
-
       border-radius: 12px;
-
       text-align: center;
-
     }
-
 
     .card h3 {
-
       margin-bottom: 8px;
-
     }
-
 
     .card p {
-
-      color: #888888;
-
+      color: #888;
       font-size: 14px;
-
     }
-
 
     .form-container {
-
       background: #101010;
-
       border: 1px solid #292929;
-
       padding: 30px;
-
       border-radius: 15px;
-
     }
-
 
     form {
-
       display: grid;
-
       gap: 18px;
-
     }
-
 
     label {
-
       font-weight: bold;
-
       font-size: 14px;
-
     }
-
 
     input,
     select,
@@ -280,167 +171,79 @@
 
       border-radius: 8px;
 
-      border: 1px solid #333333;
+      border: 1px solid #333;
 
       background: #070707;
 
-      color: #ffffff;
+      color: #fff;
 
       outline: none;
 
     }
 
-
     input:focus,
     select:focus,
     textarea:focus {
-
       border-color: #ff541c;
-
     }
-
 
     textarea {
-
       min-height: 120px;
-
       resize: vertical;
-
     }
-
 
     .row {
-
       display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
+      grid-template-columns: 1fr 1fr;
       gap: 18px;
-
     }
 
-
-    /* SUCCESS SCREEN */
-
-    #success {
-
+    #success,
+    #cooldown {
       display: none;
-
       text-align: center;
-
       padding: 40px 15px;
-
     }
 
-
-    #success h2 {
-
+    #success h2,
+    #cooldown h2 {
       color: #ff652c;
-
-      font-size: 30px;
-
       margin-bottom: 15px;
-
     }
-
 
     #applicationId {
-
       font-size: 22px;
-
       font-weight: bold;
-
       margin: 20px 0;
-
     }
-
-
-    /* COOLDOWN SCREEN */
-
-    #cooldown {
-
-      display: none;
-
-      text-align: center;
-
-      padding: 40px 15px;
-
-    }
-
-
-    #cooldown h2 {
-
-      color: #ff652c;
-
-      font-size: 28px;
-
-      margin-bottom: 15px;
-
-    }
-
-
-    #countdown {
-
-      font-size: 20px;
-
-      font-weight: bold;
-
-      margin: 20px 0;
-
-    }
-
-
-    /* ERROR */
 
     #error {
-
       display: none;
-
       color: #ff7777;
-
       background: #260b0b;
-
       border: 1px solid #702020;
-
       padding: 12px;
-
       border-radius: 8px;
-
       margin-bottom: 15px;
-
       word-break: break-word;
-
     }
-
 
     footer {
-
       text-align: center;
-
       padding: 30px;
-
-      border-top: 1px solid #222222;
-
-      color: #666666;
-
+      border-top: 1px solid #222;
+      color: #666;
     }
-
 
     @media (max-width: 700px) {
 
       .cards,
       .row {
-
         grid-template-columns: 1fr;
-
       }
 
-
       .form-container {
-
         padding: 20px;
-
       }
 
     }
@@ -463,37 +266,26 @@
         FREE FIRE GUILD
       </div>
 
-
       <h1>
         THEㅤ⚔ㅤCONQUEROR
       </h1>
-
 
       <h2>
         GUILD TRYOUTS ARE OPEN
       </h2>
 
-
       <p>
-
         Think you've got what it takes?
-
         Apply, prove your skills,
-
         and earn your place among
-
         THE CONQUERORS.
-
       </p>
-
 
       <a
         href="#apply"
         class="btn"
       >
-
         ⚔ APPLY NOW
-
       </a>
 
     </div>
@@ -505,25 +297,17 @@
 
   <section class="section">
 
-
     <h2 class="section-title">
-
       WHY JOIN US?
-
     </h2>
 
-
     <p class="section-subtitle">
-
       Rise together.
       Fight together.
       Conquer together.
-
     </p>
 
-
     <div class="cards">
-
 
       <div class="card">
 
@@ -532,10 +316,8 @@
         </h3>
 
         <p>
-
           Participate in guild wars,
           matches and competitive events.
-
         </p>
 
       </div>
@@ -548,10 +330,8 @@
         </h3>
 
         <p>
-
           Build teamwork and improve
           your game with the squad.
-
         </p>
 
       </div>
@@ -564,51 +344,40 @@
         </h3>
 
         <p>
-
           Improve your skills and
           become a stronger player.
-
         </p>
 
       </div>
-
 
     </div>
 
   </section>
 
 
-  <!-- APPLICATION -->
+  <!-- TRYOUT -->
 
   <section
     class="section"
     id="apply"
   >
 
-
     <h2 class="section-title">
-
       TRYOUT APPLICATION
-
     </h2>
 
-
     <p class="section-subtitle">
-
       Fill in your information carefully.
-
     </p>
 
 
     <div class="form-container">
 
 
-      <!-- ERROR -->
-
       <div id="error"></div>
 
 
-      <!-- FORM -->
+      <!-- APPLICATION FORM -->
 
       <form id="tryoutForm">
 
@@ -840,39 +609,26 @@
       <div id="success">
 
         <h2>
-
           APPLICATION SUBMITTED ⚔️
-
         </h2>
 
-
         <p>
-
           Your application has been
           successfully submitted.
-
         </p>
-
 
         <div id="applicationId"></div>
 
-
         <p>
-
           Thank you for applying to
           THEㅤ⚔ㅤCONQUEROR.
-
         </p>
-
 
         <br>
 
-
         <p>
-
           ⏳ Please wait 24 hours before
           applying again.
-
         </p>
 
       </div>
@@ -883,32 +639,21 @@
       <div id="cooldown">
 
         <h2>
-
           APPLICATION ALREADY SUBMITTED ⚔️
-
         </h2>
 
-
         <p>
-
           Your previous application
           has already been received.
-
         </p>
 
-
         <div id="countdown">
-
           Please wait 24 hours.
-
         </div>
 
-
         <p>
-
           You can apply again after
           your 24-hour cooldown ends.
-
         </p>
 
       </div>
@@ -927,430 +672,357 @@
   </footer>
 
 
+  <!-- SUPABASE + FORM SCRIPT -->
 
-<script>
+  <script>
 
 
-/*
-================================================
-SUPABASE CONNECTION
-================================================
+    /*
+    ============================================
+    SUPABASE SETTINGS
+    ============================================
+    */
 
-Project URL:
-https://muyggfhblazjqoewrxth.supabase.co
+    const SUPABASE_URL =
+      "https://muyggfhblazjqoewrxth.supabase.co";
 
-Paste your CURRENT sb_publishable key below.
 
-DO NOT use a secret/service_role key.
-================================================
-*/
+    const SUPABASE_ANON_KEY =
+      "sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma
 
 
-const SUPABASE_URL =
-  "https://muyggfhblazjqoewrxth.supabase.co";
+    /*
+    ============================================
+    PAGE ELEMENTS
+    ============================================
+    */
 
+    const form =
+      document.getElementById(
+        "tryoutForm"
+      );
 
-const SUPABASE_ANON_KEY =
-  sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma
 
-/*
-================================================
-PAGE ELEMENTS
-================================================
-*/
+    const success =
+      document.getElementById(
+        "success"
+      );
 
 
-const form =
-  document.getElementById(
-    "tryoutForm"
-  );
+    const cooldown =
+      document.getElementById(
+        "cooldown"
+      );
 
 
-const success =
-  document.getElementById(
-    "success"
-  );
+    const errorBox =
+      document.getElementById(
+        "error"
+      );
 
 
-const cooldown =
-  document.getElementById(
-    "cooldown"
-  );
+    const submitButton =
+      document.getElementById(
+        "submitButton"
+      );
 
 
-const errorBox =
-  document.getElementById(
-    "error"
-  );
+    const applicationIdBox =
+      document.getElementById(
+        "applicationId"
+      );
 
 
-const submitButton =
-  document.getElementById(
-    "submitButton"
-  );
+    const countdown =
+      document.getElementById(
+        "countdown"
+      );
 
 
-const applicationIdBox =
-  document.getElementById(
-    "applicationId"
-  );
+    /*
+    ============================================
+    SUBMIT
+    ============================================
+    */
 
+    form.addEventListener(
+      "submit",
+      async function(event) {
 
-const countdown =
-  document.getElementById(
-    "countdown"
-  );
+        event.preventDefault();
 
 
-/*
-================================================
-FORM SUBMISSION
-================================================
-*/
+        errorBox.style.display =
+          "none";
 
 
-form.addEventListener(
-  "submit",
-  async function(event) {
+        submitButton.disabled =
+          true;
 
 
-    event.preventDefault();
+        submitButton.textContent =
+          "SUBMITTING...";
 
 
-    errorBox.style.display =
-      "none";
+        try {
 
 
-    submitButton.disabled =
-      true;
+          /*
+          Check key.
+          */
 
-
-    submitButton.textContent =
-      "SUBMITTING...";
-
-
-    try {
-
-
-      /*
-      Check key.
-      */
-
-      if (
-        SUPABASE_ANON_KEY.includes(
-          "PASTE_"
-        )
-      ) {
-
-        throw new Error(
-          "Please add your Supabase publishable key."
-        );
-
-      }
-
-
-      /*
-      Get form data.
-      */
-
-      const formData =
-        new FormData(form);
-
-
-      const ign =
-        formData.get("ign");
-
-
-      const uid =
-        formData.get("uid");
-
-
-      const contact =
-        formData.get("contact");
-
-
-      const playerRole =
-        formData.get("player_role");
-
-
-      const playerRank =
-        formData.get("player_rank");
-
-
-      const headshot =
-        formData.get("headshot");
-
-
-      const gameMode =
-        formData.get("game_mode");
-
-
-      const microphone =
-        formData.get("microphone");
-
-
-      const previousGuild =
-        formData.get("previous_guild");
-
-
-      const reason =
-        formData.get("reason");
-
-
-      /*
-      Generate application ID.
-      */
-
-      const applicationId =
-        "TC-" +
-        Date.now()
-          .toString()
-          .slice(-8);
-
-
-      /*
-      Create application.
-      */
-
-      const application = {
-
-        application_id:
-          applicationId,
-
-        ign:
-          ign,
-
-        uid:
-          uid,
-
-        contact:
-          contact,
-
-        player_role:
-          playerRole,
-
-        player_rank:
-          playerRank,
-
-        headshot:
-          headshot || null,
-
-        game_mode:
-          gameMode,
-
-        microphone:
-          microphone,
-
-        previous_guild:
-          previousGuild || null,
-
-        reason:
-          reason,
-
-        status:
-          "pending"
-
-      };
-
-
-      /*
-      SEND TO SUPABASE
-      */
-
-      const response =
-        await fetch(
-
-          SUPABASE_URL +
-          "/rest/v1/applications",
-
-          {
-
-            method: "POST",
-
-            headers: {
-
-              "apikey":
-                SUPABASE_ANON_KEY,
-
-              "Authorization":
-                "Bearer " +
-                SUPABASE_ANON_KEY,
-
-              "Content-Type":
-                "application/json",
-
-              "Prefer":
-                "return=minimal"
-
-            },
-
-            body:
-              JSON.stringify(
-                application
-              )
+          if (
+            SUPABASE_ANON_KEY.includes(
+              "PASTE_"
+            )
+          ) {
+
+            throw new Error(
+              "Supabase publishable key is missing."
+            );
 
           }
 
-        );
 
-alert("DATABASE REQUEST FINISHED");
-      /*
-      GET RESPONSE TEXT
-      */
+          /*
+          Get form data.
+          */
 
-      const responseText =
-        await response.text();
+          const data =
+            new FormData(form);
 
 
-      console.log(
-        "Supabase status:",
-        response.status
-      );
+          /*
+          Create application ID.
+          */
+
+          const applicationId =
+            "TC-" +
+            Date.now()
+              .toString()
+              .slice(-8);
 
 
-      console.log(
-        "Supabase response:",
-        responseText
-      );
+          /*
+          Application object.
+          */
+
+          const application = {
+
+            application_id:
+              applicationId,
+
+            ign:
+              data.get("ign"),
+
+            uid:
+              data.get("uid"),
+
+            contact:
+              data.get("contact"),
+
+            player_role:
+              data.get("player_role"),
+
+            player_rank:
+              data.get("player_rank"),
+
+            headshot:
+              data.get("headshot") ||
+              null,
+
+            game_mode:
+              data.get("game_mode"),
+
+            microphone:
+              data.get("microphone"),
+
+            previous_guild:
+              data.get("previous_guild") ||
+              null,
+
+            reason:
+              data.get("reason"),
+
+            status:
+              "pending"
+
+          };
 
 
-      /*
-      ========================================
-      DATABASE REJECTED APPLICATION
-      ========================================
-      */
+          /*
+          ========================================
+          SEND TO SUPABASE
+          ========================================
+          */
 
-      if (!response.ok) {
+          const response =
+            await fetch(
+
+              SUPABASE_URL +
+              "/rest/v1/applications",
+
+              {
+
+                method: "POST",
+
+                headers: {
+
+                  "apikey":
+                    SUPABASE_ANON_KEY,
+
+                  "Authorization":
+                    "Bearer " +
+                    SUPABASE_ANON_KEY,
+
+                  "Content-Type":
+                    "application/json",
+
+                  "Prefer":
+                    "return=minimal"
+
+                },
+
+                body:
+                  JSON.stringify(
+                    application
+                  )
+
+              }
+
+            );
 
 
-        /*
-        24-HOUR COOLDOWN
-        */
+          /*
+          Read server response.
+          */
 
-        if (
-          responseText.includes(
-            "24 hours"
-          )
-        ) {
+          const responseText =
+            await response.text();
 
+
+          /*
+          ========================================
+          CHECK FOR ERROR
+          ========================================
+          */
+
+          if (!response.ok) {
+
+
+            /*
+            24-hour cooldown.
+            */
+
+            if (
+              responseText
+                .toLowerCase()
+                .includes(
+                  "24 hours"
+                )
+            ) {
+
+              form.style.display =
+                "none";
+
+
+              cooldown.style.display =
+                "block";
+
+
+              countdown.textContent =
+                "⏳ Please wait 24 hours before applying again.";
+
+
+              cooldown.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+              });
+
+
+              return;
+
+            }
+
+
+            throw new Error(
+              "Database error: " +
+              responseText
+            );
+
+          }
+
+
+          /*
+          ========================================
+          SUCCESS
+          ========================================
+          */
 
           form.style.display =
             "none";
 
 
-          cooldown.style.display =
+          success.style.display =
             "block";
 
 
-          countdown.textContent =
-            "⏳ Please wait 24 hours before applying again.";
+          applicationIdBox.textContent =
+            "Application ID: " +
+            applicationId;
 
 
-          cooldown.scrollIntoView({
+          success.scrollIntoView({
             behavior: "smooth",
             block: "center"
           });
 
 
-          return;
-
         }
 
 
-        /*
-        Other database error.
-        */
+        catch (error) {
 
-        throw new Error(
-          "Database error (" +
-          response.status +
-          "): " +
-          responseText
-        );
+
+          console.error(
+            error
+          );
+
+
+          errorBox.textContent =
+            error.message;
+
+
+          errorBox.style.display =
+            "block";
+
+
+          submitButton.disabled =
+            false;
+
+
+          submitButton.textContent =
+            "⚔ SUBMIT APPLICATION";
+
+        }
 
       }
 
-
-      /*
-      ========================================
-      SUCCESS
-      ========================================
-      */
-
-      console.log(
-        "APPLICATION SUBMITTED SUCCESSFULLY"
-      );
+    );
 
 
-      /*
-      Hide the form.
-      */
-
-      form.style.display =
-        "none";
+  </script>
 
 
-      /*
-      Show success screen.
-      */
+  <!-- VERSION TEST -->
 
-      success.style.display =
-        "block";
+  <script>
 
+    alert(
+      "NEW VERSION OF THE WEBSITE IS LOADED"
+    );
 
-      /*
-      Show application ID.
-      */
-
-      applicationIdBox.textContent =
-        "Application ID: " +
-        applicationId;
-
-
-      /*
-      Scroll to success message.
-      */
-
-      success.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-
-
-    }
-
-
-    catch (error) {
-
-
-      console.error(
-        "Submission error:",
-        error
-      );
-
-
-      errorBox.textContent =
-        error.message;
-
-
-      errorBox.style.display =
-        "block";
-
-
-      submitButton.disabled =
-        false;
-
-
-      submitButton.textContent =
-        "⚔ SUBMIT APPLICATION";
-
-    }
-
-  }
-
-);
-
-</script>
+  </script>
 
 
 </body>
