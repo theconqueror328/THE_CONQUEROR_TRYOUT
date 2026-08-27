@@ -1,142 +1,679 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>THE ⚔ CONQUEROR | Guild Tryouts</title>
+  <title>THE ⚔ CONQUEROR | Guild Tryouts</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #070707;
+      color: white;
+      line-height: 1.5;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+      background:
+        radial-gradient(circle at center, #4d1708 0%, #120806 35%, #070707 70%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .small-title {
+      color: #ff5b22;
+      font-weight: bold;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 8vw, 78px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 0 0 30px rgba(255, 70, 20, 0.5);
+    }
+
+    .hero h2 {
+      margin-top: 15px;
+      color: #ff652c;
+    }
+
+    .hero p {
+      margin: 20px auto 30px;
+      max-width: 650px;
+      color: #bbb;
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      background: #ff541c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .section {
+      width: min(900px, 92%);
+      margin: auto;
+      padding: 65px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #888;
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #101010;
+      border: 1px solid #292929;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .card p {
+      color: #888;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .form-container {
+      background: #101010;
+      border: 1px solid #292929;
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      margin-top: 8px;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background: #070707;
+      color: white;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #ff541c;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    #success {
+      display: none;
+      text-align: center;
+      padding: 35px 15px;
+    }
+
+    #success h2 {
+      color: #ff652c;
+      margin-bottom: 12px;
+    }
+
+    #applicationId {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    #error {
+      display: none;
+      color: #ff7777;
+      background: #260b0b;
+      border: 1px solid #702020;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #222;
+      color: #666;
+    }
+
+    @media (max-width: 700px) {
+      .cards,
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      .form-container {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>THEㅤ⚔ㅤCONQUEROR</h1>
+  <!-- HERO -->
 
-    <h2>GUILD TRYOUTS ARE OPEN</h2>
+  <section class="hero">
 
-    <p>
-        Think you have what it takes?
-        Apply for THEㅤ⚔ㅤCONQUEROR guild tryouts.
+    <div class="hero-content">
+
+      <div class="small-title">
+        FREE FIRE GUILD
+      </div>
+
+      <h1>THEㅤ⚔ㅤCONQUEROR</h1>
+
+      <h2>GUILD TRYOUTS ARE OPEN</h2>
+
+      <p>
+        Think you've got what it takes?
+        Apply, prove your skills, and earn your place
+        among THE CONQUERORS.
+      </p>
+
+      <a href="#apply" class="btn">
+        ⚔ APPLY NOW
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY JOIN -->
+
+  <section class="section">
+
+    <h2 class="section-title">
+      WHY JOIN US?
+    </h2>
+
+    <p class="section-subtitle">
+      Rise together. Fight together. Conquer together.
     </p>
 
-    <a href="#apply">APPLY NOW</a>
+    <div class="cards">
+
+      <div class="card">
+        <h3>⚔️ COMPETITIVE</h3>
+        <p>
+          Participate in guild wars,
+          matches and competitive events.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🔥 TEAMWORK</h3>
+        <p>
+          Build teamwork and improve
+          your game with the squad.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🏆 GROWTH</h3>
+        <p>
+          Improve your skills and
+          work toward becoming a core player.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <hr>
+  <!-- APPLICATION -->
 
+  <section class="section" id="apply">
 
-    <h2 id="apply">TRYOUT APPLICATION</h2>
+    <h2 class="section-title">
+      TRYOUT APPLICATION
+    </h2>
 
-    <form>
+    <p class="section-subtitle">
+      Fill in your information carefully.
+    </p>
 
-        <label>
+    <div class="form-container">
+
+      <div id="error"></div>
+
+      <form id="tryoutForm">
+
+        <div class="row">
+
+          <label>
             In-Game Name
-            <br>
-            <input type="text" name="ign" required>
-        </label>
 
-        <br><br>
+            <input
+              type="text"
+              name="ign"
+              placeholder="Your Free Fire name"
+              required
+            >
 
-        <label>
+          </label>
+
+          <label>
             Free Fire UID
-            <br>
-            <input type="text" name="uid" required>
-        </label>
 
-        <br><br>
+            <input
+              type="text"
+              name="uid"
+              placeholder="Your UID"
+              required
+            >
+
+          </label>
+
+        </div>
+
 
         <label>
-            WhatsApp / Contact
-            <br>
-            <input type="text" name="contact" required>
+          WhatsApp / Contact
+
+          <input
+            type="tel"
+            name="contact"
+            placeholder="Your contact number"
+            required
+          >
+
         </label>
 
-        <br><br>
 
-        <label>
+        <div class="row">
+
+          <label>
             Main Role
-            <br>
 
-            <select name="role" required>
-                <option value="">Choose your role</option>
-                <option>Rusher</option>
-                <option>Sniper</option>
-                <option>Support</option>
-                <option>IGL</option>
-                <option>All-Rounder</option>
+            <select name="player_role" required>
+
+              <option value="">
+                Select your role
+              </option>
+
+              <option>Rusher</option>
+              <option>Sniper</option>
+              <option>Support</option>
+              <option>IGL</option>
+              <option>All-Rounder</option>
+
             </select>
-        </label>
 
-        <br><br>
+          </label>
 
-        <label>
+
+          <label>
             Current Rank
-            <br>
-            <input type="text" name="rank" required>
-        </label>
 
-        <br><br>
+            <input
+              type="text"
+              name="player_rank"
+              placeholder="Example: Heroic"
+              required
+            >
 
-        <label>
+          </label>
+
+        </div>
+
+
+        <div class="row">
+
+          <label>
             Headshot %
-            <br>
-            <input type="text" name="headshot">
-        </label>
 
-        <br><br>
+            <input
+              type="text"
+              name="headshot"
+              placeholder="Example: 25%"
+            >
 
-        <label>
+          </label>
+
+
+          <label>
             BR / CS
-            <br>
 
-            <select name="mode" required>
-                <option value="">Choose mode</option>
-                <option>BR</option>
-                <option>CS</option>
-                <option>Both</option>
+            <select name="game_mode" required>
+
+              <option value="">
+                Select mode
+              </option>
+
+              <option>BR</option>
+              <option>CS</option>
+              <option>Both</option>
+
             </select>
-        </label>
 
-        <br><br>
+          </label>
 
-        <label>
-            Microphone
-            <br>
+        </div>
 
-            <select name="mic" required>
-                <option value="">Choose</option>
-                <option>Yes</option>
-                <option>No</option>
-            </select>
-        </label>
-
-        <br><br>
 
         <label>
-            Previous Guild / Team
-            <br>
-            <input type="text" name="previous">
+          Do you have a microphone?
+
+          <select name="microphone" required>
+
+            <option value="">
+              Select one
+            </option>
+
+            <option>Yes</option>
+            <option>No</option>
+
+          </select>
+
         </label>
 
-        <br><br>
 
         <label>
-            Why do you want to join THEㅤ⚔ㅤCONQUEROR?
-            <br>
+          Previous Guild / Team
 
-            <textarea
-                name="reason"
-                rows="6"
-                required>
-            </textarea>
+          <input
+            type="text"
+            name="previous_guild"
+            placeholder="Enter N/A if none"
+          >
+
         </label>
 
-        <br><br>
 
-        <button type="submit">
-            ⚔ SUBMIT APPLICATION
+        <label>
+          Why do you want to join
+          THEㅤ⚔ㅤCONQUEROR?
+
+          <textarea
+            name="reason"
+            placeholder="Tell us why you want to join..."
+            required
+          ></textarea>
+
+        </label>
+
+
+        <button
+          class="btn"
+          type="submit"
+          id="submitButton"
+        >
+          ⚔ SUBMIT APPLICATION
         </button>
 
-    </form>
+      </form>
+
+
+      <!-- SUCCESS -->
+
+      <div id="success">
+
+        <h2>
+          APPLICATION RECEIVED ⚔️
+        </h2>
+
+        <p>
+          Your application has been saved successfully.
+        </p>
+
+        <div id="applicationId"></div>
+
+        <p>
+          Keep this Application ID for your records.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    © 2026 THEㅤ⚔ㅤCONQUEROR • Free Fire Guild
+  </footer>
+
+
+<script>
+
+/*
+====================================================
+SUPABASE CONNECTION
+====================================================
+
+Replace ONLY the two values below.
+
+Do NOT use your database password.
+Do NOT use a service_role/secret key.
+
+Use:
+1. Supabase Project URL
+2. Supabase Publishable/anon public key
+====================================================
+*/
+
+const SUPABASE_URL =
+  "PASTE_YOUR_SUPABASE_PROJECT_URL_HERE";
+
+const SUPABASE_ANON_KEY =
+  "PASTE_YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY_HERE";
+
+
+const form = document.getElementById("tryoutForm");
+
+const success = document.getElementById("success");
+
+const errorBox = document.getElementById("error");
+
+const submitButton =
+  document.getElementById("submitButton");
+
+
+form.addEventListener("submit", async function(event) {
+
+  event.preventDefault();
+
+  errorBox.style.display = "none";
+
+  submitButton.disabled = true;
+
+  submitButton.textContent = "SUBMITTING...";
+
+
+  try {
+
+    if (
+      SUPABASE_URL.includes("PASTE_") ||
+      SUPABASE_ANON_KEY.includes("PASTE_")
+    ) {
+
+      throw new Error(
+        "Supabase has not been connected yet."
+      );
+
+    }
+
+
+    const formData =
+      Object.fromEntries(
+        new FormData(form).entries()
+      );
+
+
+    const applicationId =
+      "TC-" +
+      Date.now()
+        .toString()
+        .slice(-8);
+
+
+    const application = {
+
+      application_id: applicationId,
+
+      ign: formData.ign,
+
+      uid: formData.uid,
+
+      contact: formData.contact,
+
+      player_role: formData.player_role,
+
+      player_rank: formData.player_rank,
+
+      headshot: formData.headshot || null,
+
+      game_mode: formData.game_mode,
+
+      microphone: formData.microphone,
+
+      previous_guild:
+        formData.previous_guild || null,
+
+      reason: formData.reason,
+
+      status: "pending"
+
+    };
+
+
+    const response = await fetch(
+
+      SUPABASE_URL +
+      "/rest/v1/applications",
+
+      {
+
+        method: "POST",
+
+        headers: {
+
+          "apikey": SUPABASE_ANON_KEY,
+
+          "Authorization":
+            "Bearer " +
+            SUPABASE_ANON_KEY,
+
+          "Content-Type":
+            "application/json",
+
+          "Prefer":
+            "return=minimal"
+
+        },
+
+        body:
+          JSON.stringify(application)
+
+      }
+
+    );
+
+
+    if (!response.ok) {
+
+      const details =
+        await response.text();
+
+      throw new Error(
+        "Database error: " + details
+      );
+
+    }
+
+
+    form.style.display = "none";
+
+    success.style.display = "block";
+
+    document.getElementById(
+      "applicationId"
+    ).textContent =
+      "Application ID: " +
+      applicationId;
+
+
+  } catch (error) {
+
+    errorBox.textContent =
+      error.message;
+
+    errorBox.style.display =
+      "block";
+
+    submitButton.disabled = false;
+
+    submitButton.textContent =
+      "⚔ SUBMIT APPLICATION";
+
+  }
+
+});
+
+</script>
 
 </body>
 </html>
