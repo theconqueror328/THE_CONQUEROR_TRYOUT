@@ -3,252 +3,258 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
-  <title>THE ⚔ CONQUEROR | Guild Tryouts</title>
+<title>
+THE ⚔ CONQUEROR | Guild Tryouts
+</title>
 
-  <style>
+<style>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #070707;
-      color: #fff;
-      line-height: 1.5;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #070707;
+  color: white;
+  line-height: 1.5;
+}
 
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px 20px;
+.hero {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
 
-      background:
-        radial-gradient(
-          circle at center,
-          #4d1708 0%,
-          #120806 40%,
-          #070707 75%
-        );
-    }
+  background:
+    radial-gradient(
+      circle at center,
+      #4d1708 0%,
+      #120806 40%,
+      #070707 75%
+    );
+}
 
-    .hero-content {
-      width: 100%;
-      max-width: 900px;
-    }
+.hero-content {
+  width: 100%;
+  max-width: 900px;
+}
 
-    .small-title {
-      color: #ff5b22;
-      font-weight: bold;
-      letter-spacing: 4px;
-      margin-bottom: 20px;
-    }
+.small-title {
+  color: #ff5b22;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
 
-    .hero h1 {
-      font-size: clamp(38px, 8vw, 78px);
-      letter-spacing: 3px;
-      text-transform: uppercase;
+.hero h1 {
+  font-size: clamp(38px, 8vw, 78px);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 
-      text-shadow:
-        0 0 30px
-        rgba(255, 70, 20, 0.5);
-    }
+.hero h2 {
+  margin-top: 15px;
+  color: #ff652c;
+}
 
-    .hero h2 {
-      margin-top: 15px;
-      color: #ff652c;
-    }
+.hero p {
+  max-width: 650px;
+  margin: 20px auto 30px;
+  color: #bbbbbb;
+}
 
-    .hero p {
-      max-width: 650px;
-      margin: 20px auto 30px;
-      color: #bbb;
-      font-size: 17px;
-    }
+.btn {
+  display: inline-block;
+  padding: 15px 28px;
 
-    .btn {
-      display: inline-block;
+  background: #ff541c;
+  color: white;
 
-      padding: 15px 28px;
+  border: none;
+  border-radius: 8px;
 
-      background: #ff541c;
-      color: #fff;
+  font-weight: bold;
+  text-decoration: none;
 
-      border: none;
-      border-radius: 8px;
+  cursor: pointer;
+}
 
-      font-weight: bold;
-      text-decoration: none;
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
-      cursor: pointer;
-    }
+.section {
+  width: min(900px, 92%);
+  margin: auto;
+  padding: 65px 0;
+}
 
-    .btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 10px;
+}
 
-    .section {
-      width: min(900px, 92%);
-      margin: auto;
-      padding: 65px 0;
-    }
+.section-subtitle {
+  text-align: center;
+  color: #888;
+  margin-bottom: 35px;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 10px;
-    }
+.cards {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
 
-    .section-subtitle {
-      text-align: center;
-      color: #888;
-      margin-bottom: 35px;
-    }
+  gap: 18px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns:
-        repeat(3, 1fr);
-      gap: 18px;
-    }
+.card {
+  background: #101010;
+  border: 1px solid #292929;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+}
 
-    .card {
-      background: #101010;
-      border: 1px solid #292929;
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
-    }
+.card h3 {
+  margin-bottom: 8px;
+}
 
-    .card h3 {
-      margin-bottom: 8px;
-    }
+.card p {
+  color: #888;
+  font-size: 14px;
+}
 
-    .card p {
-      color: #888;
-      font-size: 14px;
-    }
+.form-container {
+  background: #101010;
+  border: 1px solid #292929;
+  padding: 30px;
+  border-radius: 15px;
+}
 
-    .form-container {
-      background: #101010;
-      border: 1px solid #292929;
-      padding: 30px;
-      border-radius: 15px;
-    }
+form {
+  display: grid;
+  gap: 18px;
+}
 
-    form {
-      display: grid;
-      gap: 18px;
-    }
+label {
+  font-weight: bold;
+  font-size: 14px;
+}
 
-    label {
-      font-weight: bold;
-      font-size: 14px;
-    }
+input,
+select,
+textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px;
 
-    input,
-    select,
-    textarea {
+  border-radius: 8px;
+  border: 1px solid #333;
 
-      width: 100%;
+  background: #070707;
+  color: white;
 
-      margin-top: 8px;
+  outline: none;
+}
 
-      padding: 14px;
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
 
-      border-radius: 8px;
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ff541c;
+}
 
-      border: 1px solid #333;
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
 
-      background: #070707;
+#success,
+#cooldown {
+  display: none;
+  text-align: center;
+  padding: 40px 15px;
+}
 
-      color: #fff;
+#success h2,
+#cooldown h2 {
+  color: #ff652c;
+  margin-bottom: 15px;
+}
 
-      outline: none;
+#applicationId {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px 0;
+}
 
-    }
+#countdown {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+}
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #ff541c;
-    }
+#error {
+  display: none;
 
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
+  color: #ff7777;
 
-    .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
+  background: #260b0b;
 
-    #success,
-    #cooldown {
-      display: none;
-      text-align: center;
-      padding: 40px 15px;
-    }
+  border: 1px solid #702020;
 
-    #success h2,
-    #cooldown h2 {
-      color: #ff652c;
-      margin-bottom: 15px;
-    }
+  padding: 12px;
 
-    #applicationId {
-      font-size: 22px;
-      font-weight: bold;
-      margin: 20px 0;
-    }
+  border-radius: 8px;
 
-    #error {
-      display: none;
-      color: #ff7777;
-      background: #260b0b;
-      border: 1px solid #702020;
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      word-break: break-word;
-    }
+  margin-bottom: 15px;
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #222;
-      color: #666;
-    }
+  word-break: break-word;
+}
 
-    @media (max-width: 700px) {
+footer {
+  text-align: center;
+  padding: 30px;
 
-      .cards,
-      .row {
-        grid-template-columns: 1fr;
-      }
+  border-top: 1px solid #222;
 
-      .form-container {
-        padding: 20px;
-      }
+  color: #666;
+}
 
-    }
+@media (max-width: 700px) {
 
-  </style>
+  .cards,
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -256,307 +262,192 @@
 <body>
 
 
-  <!-- HERO -->
+<section class="hero">
 
-  <section class="hero">
+  <div class="hero-content">
 
-    <div class="hero-content">
+    <div class="small-title">
+      FREE FIRE GUILD
+    </div>
 
-      <div class="small-title">
-        FREE FIRE GUILD
-      </div>
+    <h1>
+      THEㅤ⚔ㅤCONQUEROR
+    </h1>
 
-      <h1>
-        THEㅤ⚔ㅤCONQUEROR
-      </h1>
+    <h2>
+      GUILD TRYOUTS ARE OPEN
+    </h2>
 
-      <h2>
-        GUILD TRYOUTS ARE OPEN
-      </h2>
+    <p>
+      Think you've got what it takes?
+      Apply, prove your skills,
+      and earn your place among
+      THE CONQUERORS.
+    </p>
+
+    <a
+      href="#apply"
+      class="btn"
+    >
+      ⚔ APPLY NOW
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <h2 class="section-title">
+    WHY JOIN US?
+  </h2>
+
+  <p class="section-subtitle">
+    Rise together. Fight together.
+    Conquer together.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <h3>
+        ⚔️ COMPETITIVE
+      </h3>
 
       <p>
-        Think you've got what it takes?
-        Apply, prove your skills,
-        and earn your place among
-        THE CONQUERORS.
+        Participate in guild wars,
+        matches and competitive events.
       </p>
 
-      <a
-        href="#apply"
-        class="btn"
-      >
-        ⚔ APPLY NOW
-      </a>
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        🔥 TEAMWORK
+      </h3>
+
+      <p>
+        Build teamwork and improve
+        your game with the squad.
+      </p>
 
     </div>
 
-  </section>
 
+    <div class="card">
 
-  <!-- WHY JOIN -->
+      <h3>
+        🏆 GROWTH
+      </h3>
 
-  <section class="section">
-
-    <h2 class="section-title">
-      WHY JOIN US?
-    </h2>
-
-    <p class="section-subtitle">
-      Rise together.
-      Fight together.
-      Conquer together.
-    </p>
-
-    <div class="cards">
-
-      <div class="card">
-
-        <h3>
-          ⚔️ COMPETITIVE
-        </h3>
-
-        <p>
-          Participate in guild wars,
-          matches and competitive events.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          🔥 TEAMWORK
-        </h3>
-
-        <p>
-          Build teamwork and improve
-          your game with the squad.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          🏆 GROWTH
-        </h3>
-
-        <p>
-          Improve your skills and
-          become a stronger player.
-        </p>
-
-      </div>
+      <p>
+        Improve your skills and
+        become a stronger player.
+      </p>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- TRYOUT -->
+<section
+  class="section"
+  id="apply"
+>
 
-  <section
-    class="section"
-    id="apply"
-  >
+  <h2 class="section-title">
+    TRYOUT APPLICATION
+  </h2>
 
-    <h2 class="section-title">
-      TRYOUT APPLICATION
-    </h2>
-
-    <p class="section-subtitle">
-      Fill in your information carefully.
-    </p>
+  <p class="section-subtitle">
+    Fill in your information carefully.
+  </p>
 
 
-    <div class="form-container">
+  <div class="form-container">
 
 
-      <div id="error"></div>
+    <div id="error"></div>
 
 
-      <!-- APPLICATION FORM -->
-
-      <form id="tryoutForm">
+    <form id="tryoutForm">
 
 
-        <div class="row">
-
-
-          <label>
-
-            In-Game Name
-
-            <input
-              type="text"
-              name="ign"
-              placeholder="Your Free Fire name"
-              required
-            >
-
-          </label>
-
-
-          <label>
-
-            Free Fire UID
-
-            <input
-              type="text"
-              name="uid"
-              placeholder="Your UID"
-              required
-            >
-
-          </label>
-
-
-        </div>
+      <div class="row">
 
 
         <label>
 
-          WhatsApp / Contact
+          In-Game Name
 
           <input
-            type="tel"
-            name="contact"
-            placeholder="Your contact number"
+            type="text"
+            name="ign"
+            placeholder="Your Free Fire name"
             required
           >
 
         </label>
 
 
-        <div class="row">
+        <label>
+
+          Free Fire UID
+
+          <input
+            type="text"
+            name="uid"
+            placeholder="Your UID"
+            required
+          >
+
+        </label>
 
 
-          <label>
-
-            Main Role
-
-            <select
-              name="player_role"
-              required
-            >
-
-              <option value="">
-                Select your role
-              </option>
-
-              <option>
-                Rusher
-              </option>
-
-              <option>
-                Sniper
-              </option>
-
-              <option>
-                Support
-              </option>
-
-              <option>
-                IGL
-              </option>
-
-              <option>
-                All-Rounder
-              </option>
-
-            </select>
-
-          </label>
+      </div>
 
 
-          <label>
+      <label>
 
-            Current Rank
+        WhatsApp / Contact
 
-            <input
-              type="text"
-              name="player_rank"
-              placeholder="Example: Heroic"
-              required
-            >
+        <input
+          type="tel"
+          name="contact"
+          placeholder="Your contact number"
+          required
+        >
 
-          </label>
-
-
-        </div>
+      </label>
 
 
-        <div class="row">
-
-
-          <label>
-
-            Headshot %
-
-            <input
-              type="text"
-              name="headshot"
-              placeholder="Example: 25%"
-            >
-
-          </label>
-
-
-          <label>
-
-            BR / CS
-
-            <select
-              name="game_mode"
-              required
-            >
-
-              <option value="">
-                Select mode
-              </option>
-
-              <option>
-                BR
-              </option>
-
-              <option>
-                CS
-              </option>
-
-              <option>
-                Both
-              </option>
-
-            </select>
-
-          </label>
-
-
-        </div>
+      <div class="row">
 
 
         <label>
 
-          Do you have a microphone?
+          Main Role
 
           <select
-            name="microphone"
+            name="player_role"
             required
           >
 
             <option value="">
-              Select one
+              Select your role
             </option>
 
-            <option>
-              Yes
-            </option>
-
-            <option>
-              No
-            </option>
+            <option>Rusher</option>
+            <option>Sniper</option>
+            <option>Support</option>
+            <option>IGL</option>
+            <option>All-Rounder</option>
 
           </select>
 
@@ -565,12 +456,32 @@
 
         <label>
 
-          Previous Guild / Team
+          Current Rank
 
           <input
             type="text"
-            name="previous_guild"
-            placeholder="Enter N/A if none"
+            name="player_rank"
+            placeholder="Example: Heroic"
+            required
+          >
+
+        </label>
+
+
+      </div>
+
+
+      <div class="row">
+
+
+        <label>
+
+          Headshot %
+
+          <input
+            type="text"
+            name="headshot"
+            placeholder="Example: 25%"
           >
 
         </label>
@@ -578,451 +489,536 @@
 
         <label>
 
-          Why do you want to join
-          THEㅤ⚔ㅤCONQUEROR?
+          BR / CS
 
-          <textarea
-            name="reason"
-            placeholder="Tell us why you want to join..."
+          <select
+            name="game_mode"
             required
-          ></textarea>
+          >
+
+            <option value="">
+              Select mode
+            </option>
+
+            <option>BR</option>
+            <option>CS</option>
+            <option>Both</option>
+
+          </select>
 
         </label>
 
 
-        <button
-          class="btn"
-          type="submit"
-          id="submitButton"
+      </div>
+
+
+      <label>
+
+        Do you have a microphone?
+
+        <select
+          name="microphone"
+          required
         >
 
-          ⚔ SUBMIT APPLICATION
+          <option value="">
+            Select one
+          </option>
 
-        </button>
+          <option>Yes</option>
+          <option>No</option>
 
+        </select>
 
-      </form>
-
-
-      <!-- SUCCESS -->
-
-      <div id="success">
-
-        <h2>
-          APPLICATION SUBMITTED ⚔️
-        </h2>
-
-        <p>
-          Your application has been
-          successfully submitted.
-        </p>
-
-        <div id="applicationId"></div>
-
-        <p>
-          Thank you for applying to
-          THEㅤ⚔ㅤCONQUEROR.
-        </p>
-
-        <br>
-
-        <p>
-          ⏳ Please wait 24 hours before
-          applying again.
-        </p>
-
-      </div>
+      </label>
 
 
-      <!-- COOLDOWN -->
+      <label>
 
-      <div id="cooldown">
+        Previous Guild / Team
 
-        <h2>
-          APPLICATION ALREADY SUBMITTED ⚔️
-        </h2>
+        <input
+          type="text"
+          name="previous_guild"
+          placeholder="Enter N/A if none"
+        >
 
-        <p>
-          Your previous application
-          has already been received.
-        </p>
+      </label>
 
-        <div id="countdown">
-          Please wait 24 hours.
-        </div>
 
-        <p>
-          You can apply again after
-          your 24-hour cooldown ends.
-        </p>
+      <label>
 
-      </div>
+        Why do you want to join
+        THEㅤ⚔ㅤCONQUEROR?
 
+        <textarea
+          name="reason"
+          placeholder="Tell us why you want to join..."
+          required
+        ></textarea>
+
+      </label>
+
+
+      <button
+        class="btn"
+        type="submit"
+        id="submitButton"
+      >
+
+        ⚔ SUBMIT APPLICATION
+
+      </button>
+
+
+    </form>
+
+
+    <!-- SUCCESS -->
+
+    <div id="success">
+
+      <h2>
+        APPLICATION SUBMITTED ⚔️
+      </h2>
+
+      <p>
+        Your application has been
+        successfully submitted.
+      </p>
+
+      <div id="applicationId"></div>
+
+      <p>
+        Thank you for applying to
+        THEㅤ⚔ㅤCONQUEROR.
+      </p>
+
+      <br>
+
+      <p>
+        ⏳ Please wait 24 hours before
+        applying again.
+      </p>
 
     </div>
 
-  </section>
 
+    <!-- COOLDOWN -->
 
-  <footer>
+    <div id="cooldown">
 
-    © 2026 THEㅤ⚔ㅤCONQUEROR
-    • Free Fire Guild
+      <h2>
+        APPLICATION ALREADY SUBMITTED ⚔️
+      </h2>
 
-  </footer>
+      <p>
+        Your previous application
+        has already been received.
+      </p>
 
+      <div id="countdown">
+        Please wait 24 hours.
+      </div>
 
-  <!-- SUPABASE + FORM SCRIPT -->
+      <p>
+        You can apply again after
+        your 24-hour cooldown ends.
+      </p>
 
-  <script>
+    </div>
 
 
-    /*
-    ============================================
-    SUPABASE SETTINGS
-    ============================================
-    */
+  </div>
 
-    const SUPABASE_URL =
-      "https://muyggfhblazjqoewrxth.supabase.co";
+</section>
 
 
-    const SUPABASE_ANON_KEY =
-      "sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma
+<footer>
 
+  © 2026 THEㅤ⚔ㅤCONQUEROR
+  • Free Fire Guild
 
-    /*
-    ============================================
-    PAGE ELEMENTS
-    ============================================
-    */
+</footer>
 
-    const form =
-      document.getElementById(
-        "tryoutForm"
-      );
 
 
-    const success =
-      document.getElementById(
-        "success"
-      );
+<script>
 
 
-    const cooldown =
-      document.getElementById(
-        "cooldown"
-      );
+/*
+============================================
+SUPABASE
+============================================
+*/
 
+const SUPABASE_URL =
+  "https://muyggfhblazjqoewrxth.supabase.co";
 
-    const errorBox =
-      document.getElementById(
-        "error"
-      );
 
+const SUPABASE_ANON_KEY =
+  "sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma;
 
-    const submitButton =
-      document.getElementById(
-        "submitButton"
-      );
 
+/*
+============================================
+ELEMENTS
+============================================
+*/
 
-    const applicationIdBox =
-      document.getElementById(
-        "applicationId"
-      );
+const form =
+  document.getElementById(
+    "tryoutForm"
+  );
 
+const success =
+  document.getElementById(
+    "success"
+  );
 
-    const countdown =
-      document.getElementById(
-        "countdown"
-      );
+const cooldown =
+  document.getElementById(
+    "cooldown"
+  );
 
+const errorBox =
+  document.getElementById(
+    "error"
+  );
 
-    /*
-    ============================================
-    SUBMIT
-    ============================================
-    */
+const submitButton =
+  document.getElementById(
+    "submitButton"
+  );
 
-    form.addEventListener(
-      "submit",
-      async function(event) {
+const applicationIdBox =
+  document.getElementById(
+    "applicationId"
+  );
 
-        event.preventDefault();
+const countdown =
+  document.getElementById(
+    "countdown"
+  );
 
 
-        errorBox.style.display =
-          "none";
+/*
+============================================
+SHOW SUCCESS
+============================================
+*/
 
+function showSuccess(applicationId) {
 
-        submitButton.disabled =
-          true;
+  form.style.display = "none";
 
+  errorBox.style.display = "none";
 
-        submitButton.textContent =
-          "SUBMITTING...";
+  cooldown.style.display = "none";
 
+  success.style.display = "block";
 
-        try {
+  applicationIdBox.textContent =
+    "Application ID: " +
+    applicationId;
 
+  success.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
 
-          /*
-          Check key.
-          */
+}
 
-          if (
-            SUPABASE_ANON_KEY.includes(
-              "PASTE_"
-            )
-          ) {
 
-            throw new Error(
-              "Supabase publishable key is missing."
-            );
+/*
+============================================
+SHOW COOLDOWN
+============================================
+*/
 
-          }
+function showCooldown() {
 
+  form.style.display = "none";
 
-          /*
-          Get form data.
-          */
+  errorBox.style.display = "none";
 
-          const data =
-            new FormData(form);
+  success.style.display = "none";
 
+  cooldown.style.display = "block";
 
-          /*
-          Create application ID.
-          */
+  countdown.textContent =
+    "⏳ Please wait 24 hours before applying again.";
 
-          const applicationId =
-            "TC-" +
-            Date.now()
-              .toString()
-              .slice(-8);
+  cooldown.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
 
+}
 
-          /*
-          Application object.
-          */
 
-          const application = {
+/*
+============================================
+FORM SUBMISSION
+============================================
+*/
 
-            application_id:
-              applicationId,
+form.addEventListener(
+  "submit",
+  async function(event) {
 
-            ign:
-              data.get("ign"),
 
-            uid:
-              data.get("uid"),
+    event.preventDefault();
 
-            contact:
-              data.get("contact"),
 
-            player_role:
-              data.get("player_role"),
+    errorBox.style.display =
+      "none";
 
-            player_rank:
-              data.get("player_rank"),
 
-            headshot:
-              data.get("headshot") ||
-              null,
+    submitButton.disabled =
+      true;
 
-            game_mode:
-              data.get("game_mode"),
 
-            microphone:
-              data.get("microphone"),
+    submitButton.textContent =
+      "SUBMITTING...";
 
-            previous_guild:
-              data.get("previous_guild") ||
-              null,
 
-            reason:
-              data.get("reason"),
+    try {
 
-            status:
-              "pending"
 
-          };
+      /*
+      Check API key.
+      */
 
+      if (
+        SUPABASE_ANON_KEY.includes(
+          "PASTE_"
+        )
+      ) {
 
-          /*
-          ========================================
-          SEND TO SUPABASE
-          ========================================
-          */
-
-          const response =
-            await fetch(
-
-              SUPABASE_URL +
-              "/rest/v1/applications",
-
-              {
-
-                method: "POST",
-
-                headers: {
-
-                  "apikey":
-                    SUPABASE_ANON_KEY,
-
-                  "Authorization":
-                    "Bearer " +
-                    SUPABASE_ANON_KEY,
-
-                  "Content-Type":
-                    "application/json",
-
-                  "Prefer":
-                    "return=minimal"
-
-                },
-
-                body:
-                  JSON.stringify(
-                    application
-                  )
-
-              }
-
-            );
-
-
-          /*
-          Read server response.
-          */
-
-          const responseText =
-            await response.text();
-
-
-          /*
-          ========================================
-          CHECK FOR ERROR
-          ========================================
-          */
-
-          if (!response.ok) {
-
-
-            /*
-            24-hour cooldown.
-            */
-
-            if (
-              responseText
-                .toLowerCase()
-                .includes(
-                  "24 hours"
-                )
-            ) {
-
-              form.style.display =
-                "none";
-
-
-              cooldown.style.display =
-                "block";
-
-
-              countdown.textContent =
-                "⏳ Please wait 24 hours before applying again.";
-
-
-              cooldown.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-              });
-
-
-              return;
-
-            }
-
-
-            throw new Error(
-              "Database error: " +
-              responseText
-            );
-
-          }
-
-
-          /*
-          ========================================
-          SUCCESS
-          ========================================
-          */
-
-          form.style.display =
-            "none";
-
-
-          success.style.display =
-            "block";
-
-
-          applicationIdBox.textContent =
-            "Application ID: " +
-            applicationId;
-
-
-          success.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
-
-
-        }
-
-
-        catch (error) {
-
-
-          console.error(
-            error
-          );
-
-
-          errorBox.textContent =
-            error.message;
-
-
-          errorBox.style.display =
-            "block";
-
-
-          submitButton.disabled =
-            false;
-
-
-          submitButton.textContent =
-            "⚔ SUBMIT APPLICATION";
-
-        }
+        throw new Error(
+          "Supabase publishable key is missing."
+        );
 
       }
 
-    );
+
+      /*
+      Collect data.
+      */
+
+      const data =
+        new FormData(form);
 
 
-  </script>
+      const applicationId =
+        "TC-" +
+        Date.now()
+          .toString()
+          .slice(-8);
 
 
-  <!-- VERSION TEST -->
+      const application = {
 
-  <script>
+        application_id:
+          applicationId,
 
-    alert(
-      "NEW VERSION OF THE WEBSITE IS LOADED"
-    );
+        ign:
+          data.get("ign"),
 
-  </script>
+        uid:
+          data.get("uid"),
+
+        contact:
+          data.get("contact"),
+
+        player_role:
+          data.get("player_role"),
+
+        player_rank:
+          data.get("player_rank"),
+
+        headshot:
+          data.get("headshot") ||
+          null,
+
+        game_mode:
+          data.get("game_mode"),
+
+        microphone:
+          data.get("microphone"),
+
+        previous_guild:
+          data.get("previous_guild") ||
+          null,
+
+        reason:
+          data.get("reason"),
+
+        status:
+          "pending"
+
+      };
+
+
+      /*
+      ========================================
+      SEND APPLICATION
+      ========================================
+      */
+
+      const controller =
+        new AbortController();
+
+
+      const timeout =
+        setTimeout(
+          function() {
+
+            controller.abort();
+
+          },
+          10000
+        );
+
+
+      const response =
+        await fetch(
+
+          SUPABASE_URL +
+          "/rest/v1/applications",
+
+          {
+
+            method: "POST",
+
+            headers: {
+
+              "apikey":
+                SUPABASE_ANON_KEY,
+
+              "Authorization":
+                "Bearer " +
+                SUPABASE_ANON_KEY,
+
+              "Content-Type":
+                "application/json",
+
+              "Prefer":
+                "return=minimal"
+
+            },
+
+            body:
+              JSON.stringify(
+                application
+              ),
+
+            signal:
+              controller.signal
+
+          }
+
+        );
+
+
+      clearTimeout(timeout);
+
+
+      const responseText =
+        await response.text();
+
+
+      /*
+      ========================================
+      DATABASE ERROR
+      ========================================
+      */
+
+      if (!response.ok) {
+
+
+        if (
+          responseText
+            .toLowerCase()
+            .includes(
+              "24 hours"
+            )
+        ) {
+
+          showCooldown();
+
+          return;
+
+        }
+
+
+        throw new Error(
+          "Database error: " +
+          responseText
+        );
+
+      }
+
+
+      /*
+      ========================================
+      SUCCESS
+      ========================================
+      */
+
+      showSuccess(
+        applicationId
+      );
+
+
+    }
+
+
+    catch (error) {
+
+
+      console.error(error);
+
+
+      if (
+        error.name ===
+        "AbortError"
+      ) {
+
+        errorBox.textContent =
+          "The database took too long to respond. Please refresh and try again.";
+
+      }
+
+      else {
+
+        errorBox.textContent =
+          error.message;
+
+      }
+
+
+      errorBox.style.display =
+        "block";
+
+
+      submitButton.disabled =
+        false;
+
+
+      submitButton.textContent =
+        "⚔ SUBMIT APPLICATION";
+
+    }
+
+
+  }
+
+);
+
+
+</script>
 
 
 </body>
