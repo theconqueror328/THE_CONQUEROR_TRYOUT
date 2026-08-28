@@ -492,6 +492,34 @@ footer {
       </label>
 
 
+      <!-- GENDER -->
+
+      <label>
+
+        Gender
+
+        <select
+          name="gender"
+          required
+        >
+
+          <option value="">
+            Select Gender
+          </option>
+
+          <option value="Male">
+            Male
+          </option>
+
+          <option value="Female">
+            Female
+          </option>
+
+        </select>
+
+      </label>
+
+
       <!-- ROLE + RANK -->
 
       <div class="row">
@@ -796,8 +824,8 @@ const SUPABASE_URL =
 
 
 /*
-Use the same publishable key you already
-have in your current working HTML.
+Paste your existing Supabase publishable
+key ONLY here.
 */
 
 const SUPABASE_ANON_KEY =
@@ -900,6 +928,9 @@ form.addEventListener(
 
         contact:
           data.get("contact"),
+
+        gender:
+          data.get("gender"),
 
         player_role:
           data.get("player_role"),
@@ -1286,4 +1317,4 @@ checkStatusButton.addEventListener(
 
 </body>
 
-  </html>
+</html>
