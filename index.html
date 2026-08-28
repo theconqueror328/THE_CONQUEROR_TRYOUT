@@ -10,9 +10,7 @@
   content="width=device-width, initial-scale=1.0"
 >
 
-<title>
-THE ⚔ CONQUEROR | Guild Tryouts
-</title>
+<title>THE ⚔ CONQUEROR | Guild Tryouts</title>
 
 <style>
 
@@ -78,16 +76,12 @@ body {
 .btn {
   display: inline-block;
   padding: 15px 28px;
-
   background: #ff541c;
   color: white;
-
   border: none;
   border-radius: 8px;
-
   font-weight: bold;
   text-decoration: none;
-
   cursor: pointer;
 }
 
@@ -116,9 +110,7 @@ body {
 
 .cards {
   display: grid;
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
@@ -162,13 +154,10 @@ textarea {
   width: 100%;
   margin-top: 8px;
   padding: 14px;
-
   border-radius: 8px;
   border: 1px solid #333;
-
   background: #070707;
   color: white;
-
   outline: none;
 }
 
@@ -189,26 +178,18 @@ textarea:focus {
   gap: 18px;
 }
 
-#success,
-#cooldown {
+#success {
   display: none;
   text-align: center;
   padding: 40px 15px;
 }
 
-#success h2,
-#cooldown h2 {
+#success h2 {
   color: #ff652c;
   margin-bottom: 15px;
 }
 
 #applicationId {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 20px 0;
-}
-
-#countdown {
   font-size: 20px;
   font-weight: bold;
   margin: 20px 0;
@@ -216,28 +197,19 @@ textarea:focus {
 
 #error {
   display: none;
-
   color: #ff7777;
-
   background: #260b0b;
-
   border: 1px solid #702020;
-
   padding: 12px;
-
   border-radius: 8px;
-
   margin-bottom: 15px;
-
   word-break: break-word;
 }
 
 footer {
   text-align: center;
   padding: 30px;
-
   border-top: 1px solid #222;
-
   color: #666;
 }
 
@@ -261,6 +233,8 @@ footer {
 
 <body>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -297,6 +271,8 @@ footer {
 </section>
 
 
+<!-- WHY JOIN -->
+
 <section class="section">
 
   <h2 class="section-title">
@@ -309,6 +285,7 @@ footer {
   </p>
 
   <div class="cards">
+
 
     <div class="card">
 
@@ -351,10 +328,13 @@ footer {
 
     </div>
 
+
   </div>
 
 </section>
 
+
+<!-- APPLICATION -->
 
 <section
   class="section"
@@ -378,6 +358,8 @@ footer {
 
     <form id="tryoutForm">
 
+
+      <!-- IGN + UID -->
 
       <div class="row">
 
@@ -413,6 +395,8 @@ footer {
       </div>
 
 
+      <!-- CONTACT -->
+
       <label>
 
         WhatsApp / Contact
@@ -426,6 +410,8 @@ footer {
 
       </label>
 
+
+      <!-- ROLE + RANK -->
 
       <div class="row">
 
@@ -443,11 +429,25 @@ footer {
               Select your role
             </option>
 
-            <option>Rusher</option>
-            <option>Sniper</option>
-            <option>Support</option>
-            <option>IGL</option>
-            <option>All-Rounder</option>
+            <option value="Rusher">
+              Rusher
+            </option>
+
+            <option value="Sniper">
+              Sniper
+            </option>
+
+            <option value="Support">
+              Support
+            </option>
+
+            <option value="IGL">
+              IGL
+            </option>
+
+            <option value="All-Rounder">
+              All-Rounder
+            </option>
 
           </select>
 
@@ -470,6 +470,8 @@ footer {
 
       </div>
 
+
+      <!-- HEADSHOT + MODE -->
 
       <div class="row">
 
@@ -500,9 +502,17 @@ footer {
               Select mode
             </option>
 
-            <option>BR</option>
-            <option>CS</option>
-            <option>Both</option>
+            <option value="BR">
+              BR
+            </option>
+
+            <option value="CS">
+              CS
+            </option>
+
+            <option value="Both">
+              Both
+            </option>
 
           </select>
 
@@ -511,6 +521,8 @@ footer {
 
       </div>
 
+
+      <!-- MICROPHONE -->
 
       <label>
 
@@ -525,13 +537,20 @@ footer {
             Select one
           </option>
 
-          <option>Yes</option>
-          <option>No</option>
+          <option value="Yes">
+            Yes
+          </option>
+
+          <option value="No">
+            No
+          </option>
 
         </select>
 
       </label>
 
+
+      <!-- PREVIOUS GUILD -->
 
       <label>
 
@@ -546,6 +565,8 @@ footer {
       </label>
 
 
+      <!-- REASON -->
+
       <label>
 
         Why do you want to join
@@ -559,6 +580,8 @@ footer {
 
       </label>
 
+
+      <!-- SUBMIT -->
 
       <button
         class="btn"
@@ -604,31 +627,6 @@ footer {
     </div>
 
 
-    <!-- COOLDOWN -->
-
-    <div id="cooldown">
-
-      <h2>
-        APPLICATION ALREADY SUBMITTED ⚔️
-      </h2>
-
-      <p>
-        Your previous application
-        has already been received.
-      </p>
-
-      <div id="countdown">
-        Please wait 24 hours.
-      </div>
-
-      <p>
-        You can apply again after
-        your 24-hour cooldown ends.
-      </p>
-
-    </div>
-
-
   </div>
 
 </section>
@@ -647,9 +645,9 @@ footer {
 
 
 /*
-============================================
-SUPABASE
-============================================
+========================================
+SUPABASE CONFIGURATION
+========================================
 */
 
 const SUPABASE_URL =
@@ -657,13 +655,13 @@ const SUPABASE_URL =
 
 
 const SUPABASE_ANON_KEY =
-  "sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma;
+  "sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma";
 
 
 /*
-============================================
-ELEMENTS
-============================================
+========================================
+GET ELEMENTS
+========================================
 */
 
 const form =
@@ -671,96 +669,35 @@ const form =
     "tryoutForm"
   );
 
-const success =
-  document.getElementById(
-    "success"
-  );
-
-const cooldown =
-  document.getElementById(
-    "cooldown"
-  );
-
-const errorBox =
-  document.getElementById(
-    "error"
-  );
 
 const submitButton =
   document.getElementById(
     "submitButton"
   );
 
+
+const errorBox =
+  document.getElementById(
+    "error"
+  );
+
+
+const success =
+  document.getElementById(
+    "success"
+  );
+
+
 const applicationIdBox =
   document.getElementById(
     "applicationId"
   );
 
-const countdown =
-  document.getElementById(
-    "countdown"
-  );
-
 
 /*
-============================================
-SHOW SUCCESS
-============================================
-*/
-
-function showSuccess(applicationId) {
-
-  form.style.display = "none";
-
-  errorBox.style.display = "none";
-
-  cooldown.style.display = "none";
-
-  success.style.display = "block";
-
-  applicationIdBox.textContent =
-    "Application ID: " +
-    applicationId;
-
-  success.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
-
-}
-
-
-/*
-============================================
-SHOW COOLDOWN
-============================================
-*/
-
-function showCooldown() {
-
-  form.style.display = "none";
-
-  errorBox.style.display = "none";
-
-  success.style.display = "none";
-
-  cooldown.style.display = "block";
-
-  countdown.textContent =
-    "⏳ Please wait 24 hours before applying again.";
-
-  cooldown.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
-
-}
-
-
-/*
-============================================
-FORM SUBMISSION
-============================================
+========================================
+SUBMIT APPLICATION
+========================================
 */
 
 form.addEventListener(
@@ -787,29 +724,32 @@ form.addEventListener(
 
 
       /*
-      Check API key.
+      Check key
       */
 
       if (
-        SUPABASE_ANON_KEY.includes(
-          "PASTE_"
-        )
+        SUPABASE_ANON_KEY ===
+        "YOUR_PUBLISHABLE_KEY_HERE"
       ) {
 
         throw new Error(
-          "Supabase publishable key is missing."
+          "Supabase publishable key has not been added."
         );
 
       }
 
 
       /*
-      Collect data.
+      Collect form data
       */
 
       const data =
         new FormData(form);
 
+
+      /*
+      Generate application ID
+      */
 
       const applicationId =
         "TC-" +
@@ -817,6 +757,10 @@ form.addEventListener(
           .toString()
           .slice(-8);
 
+
+      /*
+      Create application
+      */
 
       const application = {
 
@@ -862,25 +806,8 @@ form.addEventListener(
 
 
       /*
-      ========================================
-      SEND APPLICATION
-      ========================================
+      Send to Supabase
       */
-
-      const controller =
-        new AbortController();
-
-
-      const timeout =
-        setTimeout(
-          function() {
-
-            controller.abort();
-
-          },
-          10000
-        );
-
 
       const response =
         await fetch(
@@ -890,7 +817,8 @@ form.addEventListener(
 
           {
 
-            method: "POST",
+            method:
+              "POST",
 
             headers: {
 
@@ -912,64 +840,51 @@ form.addEventListener(
             body:
               JSON.stringify(
                 application
-              ),
-
-            signal:
-              controller.signal
+              )
 
           }
 
         );
 
 
-      clearTimeout(timeout);
-
-
-      const responseText =
-        await response.text();
-
-
       /*
-      ========================================
-      DATABASE ERROR
-      ========================================
+      Check response
       */
 
       if (!response.ok) {
 
-
-        if (
-          responseText
-            .toLowerCase()
-            .includes(
-              "24 hours"
-            )
-        ) {
-
-          showCooldown();
-
-          return;
-
-        }
-
+        const errorText =
+          await response.text();
 
         throw new Error(
-          "Database error: " +
-          responseText
+          errorText ||
+          "The application could not be submitted."
         );
 
       }
 
 
       /*
-      ========================================
       SUCCESS
-      ========================================
       */
 
-      showSuccess(
-        applicationId
-      );
+      form.style.display =
+        "none";
+
+
+      success.style.display =
+        "block";
+
+
+      applicationIdBox.textContent =
+        "Application ID: " +
+        applicationId;
+
+
+      success.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
 
 
     }
@@ -978,25 +893,15 @@ form.addEventListener(
     catch (error) {
 
 
-      console.error(error);
+      console.error(
+        "Submission error:",
+        error
+      );
 
 
-      if (
-        error.name ===
-        "AbortError"
-      ) {
-
-        errorBox.textContent =
-          "The database took too long to respond. Please refresh and try again.";
-
-      }
-
-      else {
-
-        errorBox.textContent =
-          error.message;
-
-      }
+      errorBox.textContent =
+        "Application failed: " +
+        error.message;
 
 
       errorBox.style.display =
