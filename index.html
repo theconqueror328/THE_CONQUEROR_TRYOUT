@@ -90,6 +90,19 @@ body {
   cursor: not-allowed;
 }
 
+.status-btn {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 15px 28px;
+  background: transparent;
+  color: white;
+  border: 1px solid #ff541c;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .section {
   width: min(900px, 92%);
   margin: auto;
@@ -193,6 +206,7 @@ textarea:focus {
   font-size: 20px;
   font-weight: bold;
   margin: 20px 0;
+  color: #ffb08c;
 }
 
 #error {
@@ -204,6 +218,65 @@ textarea:focus {
   border-radius: 8px;
   margin-bottom: 15px;
   word-break: break-word;
+}
+
+/* STATUS CHECKER */
+
+#status-section {
+  background:
+    radial-gradient(
+      circle at center,
+      #301007 0%,
+      #101010 55%,
+      #070707 100%
+    );
+}
+
+.status-container {
+  max-width: 600px;
+  margin: auto;
+  background: #101010;
+  border: 1px solid #292929;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.status-container input {
+  margin-bottom: 15px;
+}
+
+.status-result {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+}
+
+.status-pending {
+  background: #332b0a;
+  border: 1px solid #766512;
+}
+
+.status-approved {
+  background: #0b321b;
+  border: 1px solid #1f8f4b;
+}
+
+.status-rejected {
+  background: #360d0d;
+  border: 1px solid #8f2525;
+}
+
+.status-not-found {
+  background: #260b0b;
+  border: 1px solid #702020;
+}
+
+.status-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 footer {
@@ -220,8 +293,14 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .form-container {
+  .form-container,
+  .status-container {
     padding: 20px;
+  }
+
+  .status-btn {
+    margin-left: 0;
+    margin-top: 12px;
   }
 
 }
@@ -266,6 +345,13 @@ footer {
       ⚔ APPLY NOW
     </a>
 
+    <a
+      href="#status-section"
+      class="status-btn"
+    >
+      🔎 CHECK STATUS
+    </a>
+
   </div>
 
 </section>
@@ -285,7 +371,6 @@ footer {
   </p>
 
   <div class="cards">
-
 
     <div class="card">
 
@@ -328,7 +413,6 @@ footer {
 
     </div>
 
-
   </div>
 
 </section>
@@ -352,7 +436,6 @@ footer {
 
   <div class="form-container">
 
-
     <div id="error"></div>
 
 
@@ -362,7 +445,6 @@ footer {
       <!-- IGN + UID -->
 
       <div class="row">
-
 
         <label>
 
@@ -391,7 +473,6 @@ footer {
 
         </label>
 
-
       </div>
 
 
@@ -414,7 +495,6 @@ footer {
       <!-- ROLE + RANK -->
 
       <div class="row">
-
 
         <label>
 
@@ -467,14 +547,12 @@ footer {
 
         </label>
 
-
       </div>
 
 
       <!-- HEADSHOT + MODE -->
 
       <div class="row">
-
 
         <label>
 
@@ -517,7 +595,6 @@ footer {
           </select>
 
         </label>
-
 
       </div>
 
@@ -613,6 +690,24 @@ footer {
       <div id="applicationId"></div>
 
       <p>
+        ⚠️ Save your Application ID.
+        You will need it to check your
+        application status.
+      </p>
+
+      <br>
+
+      <button
+        class="btn"
+        type="button"
+        onclick="document.getElementById('status-section').scrollIntoView({behavior:'smooth'})"
+      >
+        🔎 CHECK MY STATUS
+      </button>
+
+      <br><br>
+
+      <p>
         Thank you for applying to
         THEㅤ⚔ㅤCONQUEROR.
       </p>
@@ -620,12 +715,58 @@ footer {
       <br>
 
       <p>
-        ⏳ Please wait 24 hours before
-        applying again.
+        ⏳ Please wait while your application
+        is being reviewed.
       </p>
 
     </div>
 
+
+  </div>
+
+</section>
+
+
+<!-- CHECK APPLICATION STATUS -->
+
+<section
+  class="section"
+  id="status-section"
+>
+
+  <h2 class="section-title">
+    CHECK APPLICATION STATUS
+  </h2>
+
+  <p class="section-subtitle">
+    Enter the Application ID you received
+    after submitting your tryout.
+  </p>
+
+
+  <div class="status-container">
+
+    <input
+      type="text"
+      id="applicationIdInput"
+      placeholder="Example: TC-12345678"
+      autocomplete="off"
+    >
+
+
+    <button
+      class="btn"
+      type="button"
+      id="checkStatusButton"
+    >
+      🔎 CHECK STATUS
+    </button>
+
+
+    <div
+      id="statusResult"
+      class="status-result"
+    ></div>
 
   </div>
 
@@ -653,6 +794,11 @@ SUPABASE CONFIGURATION
 const SUPABASE_URL =
   "https://muyggfhblazjqoewrxth.supabase.co";
 
+
+/*
+Use the same publishable key you already
+have in your current working HTML.
+*/
 
 const SUPABASE_ANON_KEY =
   "sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma";
@@ -704,17 +850,13 @@ form.addEventListener(
   "submit",
   async function(event) {
 
-
     event.preventDefault();
-
 
     errorBox.style.display =
       "none";
 
-
     submitButton.disabled =
       true;
-
 
     submitButton.textContent =
       "SUBMITTING...";
@@ -722,14 +864,9 @@ form.addEventListener(
 
     try {
 
-
-      /*
-      Check key
-      */
-
       if (
         SUPABASE_ANON_KEY ===
-        "YOUR_PUBLISHABLE_KEY_HERE"
+        "sb_publishable_M_7Cb2GtvzQqLftmUJE_1Q_fXB1e3Ma"
       ) {
 
         throw new Error(
@@ -739,17 +876,9 @@ form.addEventListener(
       }
 
 
-      /*
-      Collect form data
-      */
-
       const data =
         new FormData(form);
 
-
-      /*
-      Generate application ID
-      */
 
       const applicationId =
         "TC-" +
@@ -757,10 +886,6 @@ form.addEventListener(
           .toString()
           .slice(-8);
 
-
-      /*
-      Create application
-      */
 
       const application = {
 
@@ -805,10 +930,6 @@ form.addEventListener(
       };
 
 
-      /*
-      Send to Supabase
-      */
-
       const response =
         await fetch(
 
@@ -847,10 +968,6 @@ form.addEventListener(
         );
 
 
-      /*
-      Check response
-      */
-
       if (!response.ok) {
 
         const errorText =
@@ -863,10 +980,6 @@ form.addEventListener(
 
       }
 
-
-      /*
-      SUCCESS
-      */
 
       form.style.display =
         "none";
@@ -892,7 +1005,6 @@ form.addEventListener(
 
     catch (error) {
 
-
       console.error(
         "Submission error:",
         error
@@ -917,15 +1029,261 @@ form.addEventListener(
 
     }
 
-
   }
 
 );
 
+
+/*
+========================================
+CHECK APPLICATION STATUS
+========================================
+*/
+
+const checkStatusButton =
+  document.getElementById(
+    "checkStatusButton"
+  );
+
+
+const applicationIdInput =
+  document.getElementById(
+    "applicationIdInput"
+  );
+
+
+const statusResult =
+  document.getElementById(
+    "statusResult"
+  );
+
+
+checkStatusButton.addEventListener(
+  "click",
+  async function() {
+
+    const applicationId =
+      applicationIdInput.value
+        .trim()
+        .toUpperCase();
+
+
+    statusResult.style.display =
+      "block";
+
+
+    statusResult.className =
+      "status-result";
+
+
+    if (!applicationId) {
+
+      statusResult.classList.add(
+        "status-not-found"
+      );
+
+      statusResult.innerHTML = `
+        <div class="status-title">
+          ⚠️ Application ID Required
+        </div>
+
+        <p>
+          Please enter your Application ID.
+        </p>
+      `;
+
+      return;
+
+    }
+
+
+    statusResult.innerHTML = `
+      <p>Checking application...</p>
+    `;
+
+
+    try {
+
+      const response =
+        await fetch(
+
+          SUPABASE_URL +
+          "/rest/v1/rpc/check_application_status",
+
+          {
+
+            method:
+              "POST",
+
+            headers: {
+
+              "apikey":
+                SUPABASE_ANON_KEY,
+
+              "Authorization":
+                "Bearer " +
+                SUPABASE_ANON_KEY,
+
+              "Content-Type":
+                "application/json"
+
+            },
+
+            body:
+              JSON.stringify({
+                lookup_application_id:
+                  applicationId
+              })
+
+          }
+
+        );
+
+
+      const data =
+        await response.json();
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          data.message ||
+          "Unable to check application status."
+        );
+
+      }
+
+
+      if (
+        !data ||
+        !data.length
+      ) {
+
+        statusResult.classList.add(
+          "status-not-found"
+        );
+
+        statusResult.innerHTML = `
+          <div class="status-title">
+            ❌ Application Not Found
+          </div>
+
+          <p>
+            Please check your Application ID
+            and try again.
+          </p>
+        `;
+
+        return;
+
+      }
+
+
+      const status =
+        data[0].status;
+
+
+      if (
+        status === "approved"
+      ) {
+
+        statusResult.classList.add(
+          "status-approved"
+        );
+
+        statusResult.innerHTML = `
+          <div class="status-title">
+            🟢 APPROVED
+          </div>
+
+          <p>
+            Congratulations! Your application
+            has been approved.
+          </p>
+        `;
+
+      }
+
+
+      else if (
+        status === "rejected"
+      ) {
+
+        statusResult.classList.add(
+          "status-rejected"
+        );
+
+        statusResult.innerHTML = `
+          <div class="status-title">
+            🔴 REJECTED
+          </div>
+
+          <p>
+            Your application was not approved.
+          </p>
+        `;
+
+      }
+
+
+      else {
+
+        statusResult.classList.add(
+          "status-pending"
+        );
+
+        statusResult.innerHTML = `
+          <div class="status-title">
+            🟡 PENDING
+          </div>
+
+          <p>
+            Your application is still being
+            reviewed.
+          </p>
+        `;
+
+      }
+
+
+    }
+
+
+    catch (error) {
+
+      console.error(
+        "Status check error:",
+        error
+      );
+
+
+      statusResult.className =
+        "status-result status-not-found";
+
+
+      statusResult.style.display =
+        "block";
+
+
+      statusResult.innerHTML = `
+        <div class="status-title">
+          ⚠️ Unable to Check
+        </div>
+
+        <p>
+          Please try again later.
+        </p>
+      `;
+
+    }
+
+  }
+
+);
 
 </script>
 
 
 </body>
 
-</html>
+  </html>
